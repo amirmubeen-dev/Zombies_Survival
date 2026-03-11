@@ -6,7 +6,7 @@
 Semester Project — AMIR MUBEEN (FA23-BSE-032) & AHMAD HASSAN (FA23-BSE-018 ) 
 
 ---
-/*
+
  *   PARALLEL ZOMBIE SURVIVAL - Semester Project
 
  * COMPILE (MSYS2 MinGW64 terminal):
@@ -15,8 +15,6 @@ Semester Project — AMIR MUBEEN (FA23-BSE-032) & AHMAD HASSAN (FA23-BSE-018 )
  *   g++ main.cpp -o zombie_survival.exe -lfreeglut -lopengl32 -lglu32 -fopenmp -std=c++17
  * ./zombie_survival.exe  (run the game)
  * -------------------------------------------------
-
- */
 
 ## 📌 How to Compile & Run
 
