@@ -54,13 +54,14 @@ struct Zombie : Entity {
         flashTimer = 0.15f;
         if (health <= 0) {
             health = 0;
-            isDying = true;
-            deathTimer = 0.0f;
+            alive = false;
+            // death animation and score handling is done in Game::update loop
         }
     }
 
     float getScale() const {
-        return (type == ZOMBIE_TANK) ? 1.8f : ((type == ZOMBIE_RUNNER) ? 0.8f : 1.0f);
+        // Ensure zombie model height is consistent with player height for realistic play
+        return 1.0f;
     }
 
     glm::vec3 getBaseColor() const {

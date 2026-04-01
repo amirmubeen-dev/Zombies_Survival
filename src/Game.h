@@ -242,15 +242,48 @@ public:
             }
         }
 
-        // Item Pickups
+        // Item Pickups (bandages/medkits/armor)
         if (keys[GLFW_KEY_E] && !player.isDown && !player.isHealing) {
-            for (size_t i = 0; i < map.items.size(); i++) {
-                if (glm::distance(player.pos, map.items[i].pos) < 2.5f) {
-                    if (map.items[i].type == 1) player.bandages++;
-                    else if (map.items[i].type == 2) player.medkits++;
-                    else if (map.items[i].type == 3) player.armor = player.maxArmor;
-                    map.items.erase(map.items.begin() + i);
+            bool picked = false;
+
+            // Crate loot – real PUBG-style pick-up
+            for (size_t i = 0; i < map.props.size(); i++) {
+                if (map.props[i].type == PROP_CRATE && glm::distance(player.pos, map.props[i].pos) < 3.0f) {
+                    int loot = rand() % 100;
+                    if (loot < 30) {
+                        player.bandages += 2;
+                        player.medkits += 1;
+                        hud.addKillMsg("CRATE: +2 bandages, +1 medkit");
+                    } else if (loot < 55) {
+                        player.medkits += 2;
+                        player.armor = std::min(player.maxArmor, player.armor + 30.0f);
+                        hud.addKillMsg("CRATE: +2 medkits, +30 armor");
+                    } else if (loot < 80) {
+                        player.armor = std::min(player.maxArmor, player.armor + 50.0f);
+                        hud.addKillMsg("CRATE: +50 armor");
+                    } else {
+                        hud.addKillMsg("CRATE: +Ammo Pouch");
+                    }
+                    for (auto& w : weaponMgr.weapons) {
+                        w->reserveAmmo = std::min(9999, w->reserveAmmo + 40);
+                    }
+                    particles.spawnDust(map.props[i].pos + glm::vec3(0, 0.5f, 0), 30);
+                    map.props.erase(map.props.begin() + i);
+                    picked = true;
                     break;
+                }
+            }
+
+            if (!picked) {
+                for (size_t i = 0; i < map.items.size(); i++) {
+                    if (glm::distance(player.pos, map.items[i].pos) < 2.5f) {
+                        if (map.items[i].type == 1) player.bandages++;
+                        else if (map.items[i].type == 2) player.medkits++;
+                        else if (map.items[i].type == 3) player.armor = player.maxArmor;
+                        map.items.erase(map.items.begin() + i);
+                        hud.addKillMsg("Item picked up");
+                        break;
+                    }
                 }
             }
         }
@@ -376,7 +409,7 @@ public:
         }
         hud.drawMinimap({player.pos.x, player.pos.z}, {camera.getFlatFront().x, camera.getFlatFront().z}, zPos);
         
-        hud.drawTopBar(waveMgr.currentWave, player.score, (int)zombieMgr.zombies.size());
+        hud.drawTopBar(waveMgr.currentWave, player.score, (int)zombieMgr.zombies.size(), map.safeRadius, map.nextSafeRadius, map.zoneShrinking);
         hud.drawKillFeed();
         
         if (player.lastDamageTime < 0.2f && !player.isDown) {

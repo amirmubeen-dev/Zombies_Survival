@@ -11,6 +11,7 @@ endif()
 
 # ---- Source files ----
 file(GLOB_RECURSE SOURCES "src/*.cpp" "src/**/*.cpp")
+list(FILTER SOURCES EXCLUDE REGEX "CMakeFiles")
 # Ensure we get main.cpp if glob misses it
 list(APPEND SOURCES "${CMAKE_SOURCE_DIR}/src/main.cpp")
 list(REMOVE_DUPLICATES SOURCES)

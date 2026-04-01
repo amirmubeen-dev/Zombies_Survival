@@ -83,17 +83,17 @@ public:
             for (auto& z : zombies) {
                 if (!z.alive || z.isDying) continue;
                 
-                // Torso is around (pos.x, pos.y + 0.5 * scale + 0.35 * scale, pos.z)
+                // Torso is around (pos.x, pos.y + 0.85 * scale, pos.z)
                 float scale = z.getScale();
                 glm::vec3 zCenter = z.pos + glm::vec3(0, 0.85f * scale, 0);
-                float radius = 0.5f * scale; // hit radius
-                
+                float radius = 0.65f * scale; // slightly larger hit radius for reliable shooting
+
                 if (glm::distance(b.pos, zCenter) < radius) {
                     z.takeDamage(b.damage);
-                    particles.spawnBlood(b.pos, 20); // 20 particles as requested
+                    particles.spawnBlood(b.pos, 30);
                     b.alive = false;
                     
-                    if (z.health <= 0) z.alive = false; // Mark kill flag (animation handled by Zombie.h)
+                    if (z.health <= 0) z.alive = false;
                     break;
                 }
             }

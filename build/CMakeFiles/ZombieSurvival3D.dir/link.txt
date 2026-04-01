@@ -1,3 +1,3 @@
 C:\msys64\mingw64\bin\cmake.exe -E rm -f CMakeFiles\ZombieSurvival3D.dir/objects.a
 C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\ZombieSurvival3D.dir/objects.a @CMakeFiles\ZombieSurvival3D.dir\objects1.rsp
-C:\msys64\mingw64\bin\c++.exe -O3 -DNDEBUG -fopenmp -Wl,--whole-archive CMakeFiles\ZombieSurvival3D.dir/objects.a -Wl,--no-whole-archive -o ZombieSurvival3D.exe -Wl,--out-implib,libZombieSurvival3D.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ZombieSurvival3D.dir\linkLibs.rsp
+C:\msys64\mingw64\bin\c++.exe -g -fopenmp -Wl,--whole-archive CMakeFiles\ZombieSurvival3D.dir/objects.a -Wl,--no-whole-archive -o ZombieSurvival3D.exe -Wl,--out-implib,libZombieSurvival3D.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ZombieSurvival3D.dir\linkLibs.rsp

@@ -1,3 +1,3 @@
-D:/zombies/zombie3d/build/CMakeFiles/ZombieSurvival3D.dir
-D:/zombies/zombie3d/build/CMakeFiles/edit_cache.dir
-D:/zombies/zombie3d/build/CMakeFiles/rebuild_cache.dir
+D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/build/CMakeFiles/ZombieSurvival3D.dir
+D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/build/CMakeFiles/edit_cache.dir
+D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/build/CMakeFiles/rebuild_cache.dir

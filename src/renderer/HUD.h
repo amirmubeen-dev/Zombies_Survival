@@ -169,9 +169,44 @@ public:
         }
     }
 
-    void drawTopBar(int wave, int score, int aliveZombies) {
-        rect(scrW/2.0f - 100, 10, 200, 30, 0,0,0, 0.6f);
-        rect(scrW/2.0f - 90, 15, 180, 20, 0.2f, 0.2f, 0.3f, 0.8f);
+    void drawTopBar(int wave, int score, int aliveZombies, float safeRadius, float nextSafeRadius, bool zoneShrinking) {
+        float x = scrW * 0.15f;
+        float w = scrW * 0.7f;
+        float y = 10;
+        float h = 22;
+
+        // base top-left panel
+        rect(x - 4, y - 4, w + 8, h + 32, 0, 0, 0, 0.55f);
+        rect(x, y, w, h + 24, 0.1f, 0.1f, 0.15f, 0.85f);
+
+        // wave/score/targets bars
+        float barY = y + 6;
+        float gap = 8;
+        float barW = (w - gap * 2) / 3.0f;
+
+        float waveProg = std::min(1.0f, (float)wave / 20.0f);
+        float aliveProg = std::min(1.0f, (float)aliveZombies / 100.0f);
+        float scoreProg = std::min(1.0f, (float)score / 2000.0f);
+
+        rect(x + 2, barY, barW, 8, 0.08f, 0.08f, 0.1f, 0.6f);
+        rect(x + 2, barY, barW * waveProg, 8, 0.8f, 0.2f, 0.2f, 0.9f);
+        rect(x + 2 + barW + gap, barY, barW, 8, 0.08f, 0.08f, 0.1f, 0.6f);
+        rect(x + 2 + barW + gap, barY, barW * scoreProg, 8, 0.2f, 0.8f, 0.2f, 0.9f);
+        rect(x + 2 + (barW + gap) * 2, barY, barW, 8, 0.08f, 0.08f, 0.1f, 0.6f);
+        rect(x + 2 + (barW + gap) * 2, barY, barW * aliveProg, 8, 0.8f, 0.6f, 0.1f, 0.9f);
+
+        // zone status bar
+        float zonePerc = (nextSafeRadius > 0) ? std::min(1.0f, safeRadius / (nextSafeRadius*1.5f)) : 0.0f;
+        float zoneColorR = zoneShrinking ? 1.0f : 0.3f;
+        float zoneColorG = zoneShrinking ? 0.2f : 0.8f;
+        rect(x + 2, barY + 14, w - 4, 6, 0.05f, 0.05f, 0.05f, 0.6f);
+        rect(x + 2, barY + 14, (w - 4) * zonePerc, 6, zoneColorR, zoneColorG, 0.1f, 0.85f);
+
+        // small dot markers for UI feel
+        for (int i = 0; i < 5; i++) {
+            float px = x + 6 + i * ((w - 20) / 4);
+            rect(px, barY + 24, 4, 4, 0.9f, 0.9f, 0.9f, 0.5f);
+        }
     }
     
     // Directional Damage Vignette

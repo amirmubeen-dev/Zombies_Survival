@@ -67,12 +67,6 @@ public:
 
             if (zombies[i].attackCooldown > 0) zombies[i].attackCooldown -= dt;
 
-            // Health check handling since Game.h sets death flag
-            if (!zombies[i].alive && !zombies[i].isDying) {
-                zombies[i].isDying = true;
-                zombies[i].deathTimer = 0.0f;
-            }
-
             // Zone tracking
             int zx = (int)((zombies[i].pos.x + MAP_RADIUS) / (2 * MAP_RADIUS) * ZONE_COLS);
             int zz = (int)((zombies[i].pos.z + MAP_RADIUS) / (2 * MAP_RADIUS) * ZONE_ROWS);

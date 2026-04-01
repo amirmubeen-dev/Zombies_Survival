@@ -1,5 +1,6 @@
 CMakeFiles/ZombieSurvival3D.dir/src/main.cpp.obj: \
- D:\zombies\zombie3d\src\main.cpp D:\zombies\zombie3d\src\Game.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\main.cpp \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\Game.h \
  C:/msys64/mingw64/include/GL/glew.h C:/msys64/mingw64/include/inttypes.h \
  C:/msys64/mingw64/include/crtdefs.h C:/msys64/mingw64/include/corecrt.h \
  C:/msys64/mingw64/include/_mingw.h \
@@ -385,8 +386,8 @@ CMakeFiles/ZombieSurvival3D.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h \
  C:/msys64/mingw64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
  C:/msys64/mingw64/include/c++/15.2.0/pstl/execution_defs.h \
- D:\zombies\zombie3d\src\core/Window.h \
- D:\zombies\zombie3d\src\core/Mesh.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\core/Window.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\core/Mesh.h \
  C:/msys64/mingw64/include/c++/15.2.0/sstream \
  C:/msys64/mingw64/include/c++/15.2.0/bits/sstream.tcc \
  C:/msys64/mingw64/include/c++/15.2.0/fstream \
@@ -394,21 +395,21 @@ CMakeFiles/ZombieSurvival3D.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/basic_file.h \
  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h \
  C:/msys64/mingw64/include/c++/15.2.0/bits/fstream.tcc \
- D:\zombies\zombie3d\src\core/Texture.h \
- D:\zombies\zombie3d\src\core/Shader.h \
- D:\zombies\zombie3d\src\renderer/Camera.h \
- D:\zombies\zombie3d\src\renderer/Renderer.h \
- D:/zombies/zombie3d/src/renderer/ParticleSystem.h \
- D:/zombies/zombie3d/src/core/Types.h \
- D:/zombies/zombie3d/src/entities/Zombie.h \
- D:/zombies/zombie3d/src/entities/Entity.h \
- D:/zombies/zombie3d/src/world/Map.h \
- D:/zombies/zombie3d/src/world/DayNight.h \
- D:/zombies/zombie3d/src/weapons/WeaponManager.h \
- D:/zombies/zombie3d/src/weapons/Weapon.h \
- D:/zombies/zombie3d/src/weapons/Pistol.h \
- D:/zombies/zombie3d/src/weapons/Shotgun.h \
- D:/zombies/zombie3d/src/weapons/Rifle.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\core/Texture.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\core/Shader.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\renderer/Camera.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\renderer/Renderer.h \
+ D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/src/renderer/ParticleSystem.h \
+ D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/src/core/Types.h \
+ D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/src/entities/Zombie.h \
+ D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/src/entities/Entity.h \
+ D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/src/world/Map.h \
+ D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/src/world/DayNight.h \
+ D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/src/weapons/WeaponManager.h \
+ D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/src/weapons/Weapon.h \
+ D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/src/weapons/Pistol.h \
+ D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/src/weapons/Shotgun.h \
+ D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/src/weapons/Rifle.h \
  C:/msys64/mingw64/include/c++/15.2.0/memory \
  C:/msys64/mingw64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
  C:/msys64/mingw64/include/c++/15.2.0/bits/align.h \
@@ -422,19 +423,19 @@ CMakeFiles/ZombieSurvival3D.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
  C:/msys64/mingw64/include/c++/15.2.0/backward/auto_ptr.h \
  C:/msys64/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h \
- D:\zombies\zombie3d\src\renderer/Skybox.h \
- D:\zombies\zombie3d\src\renderer/HUD.h \
- D:\zombies\zombie3d\src\entities/Player.h \
- D:\zombies\zombie3d\src\entities/ZombieManager.h \
- D:\zombies\zombie3d\src\world/WaveManager.h \
- D:\zombies\zombie3d\src\world/CollisionSystem.h \
- D:\zombies\zombie3d\src\parallel/OpenMPManager.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\renderer/Skybox.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\renderer/HUD.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\entities/Player.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\entities/ZombieManager.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\world/WaveManager.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\world/CollisionSystem.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\parallel/OpenMPManager.h \
  C:/msys64/mingw64/include/c++/15.2.0/chrono \
  C:/msys64/mingw64/include/c++/15.2.0/bits/chrono.h \
  C:/msys64/mingw64/include/c++/15.2.0/ratio \
  C:/msys64/mingw64/include/c++/15.2.0/bits/parse_numbers.h \
- D:\zombies\zombie3d\src\parallel/MPIZoneManager.h \
- D:\zombies\zombie3d\src\audio/AudioManager.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\parallel/MPIZoneManager.h \
+ D:\6th-semester\pdc\projects\3d_zombies_final\zombie3d\Zombies_Survival\src\audio/AudioManager.h \
  C:/msys64/mingw64/include/AL/al.h C:/msys64/mingw64/include/AL/alc.h \
  C:/msys64/mingw64/include/c++/15.2.0/map \
  C:/msys64/mingw64/include/c++/15.2.0/bits/stl_tree.h \

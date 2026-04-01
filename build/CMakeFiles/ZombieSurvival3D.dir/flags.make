@@ -6,5 +6,5 @@ CXX_DEFINES = -DHAS_OPENAL
 
 CXX_INCLUDES = @CMakeFiles/ZombieSurvival3D.dir/includes_CXX.rsp
 
-CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17 -O2 -fopenmp
+CXX_FLAGS = -g -std=gnu++17 -Wall -Wextra -g -fopenmp
 

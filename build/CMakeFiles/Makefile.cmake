@@ -38,7 +38,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/msys64/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake"
   "C:/msys64/mingw64/share/cmake/Modules/Platform/Windows.cmake"
   "C:/msys64/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake"
-  "D:/zombies/zombie3d/CMakeLists.txt"
+  "D:/6th-semester/pdc/projects/3d_zombies_final/zombie3d/Zombies_Survival/CMakeLists.txt"
   "CMakeFiles/4.2.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.2.1/CMakeRCCompiler.cmake"
   "CMakeFiles/4.2.1/CMakeSystem.cmake"
