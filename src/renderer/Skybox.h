@@ -82,25 +82,39 @@ void main() {
     gl_Position = pos.xyww;
 }
 )";
-        const char* fs = R"(
+const char* fs = R"(
 #version 330 core
 in vec3 TexCoords;
 in float vY;
 out vec4 FragColor;
+
 uniform samplerCube skybox;
 uniform vec3 topColor;
 uniform vec3 bottomColor;
 uniform bool hasCubemap;
+
 void main() {
     if (hasCubemap) {
         FragColor = texture(skybox, TexCoords);
     } else {
         float t = clamp(vY * 0.5 + 0.5, 0.0, 1.0);
+
+        // Base gradient (sky)
         vec3 col = mix(bottomColor, topColor, t);
-        // Subtle fog/haze at horizon
-        float fogFactor = 1.0 - abs(vY) * 2.0;
-        fogFactor = clamp(fogFactor, 0.0, 1.0);
-        col = mix(col, bottomColor * 0.5, fogFactor * 0.25);
+
+        // 🌫 Horizon scattering (realistic fade)
+        float horizon = exp(-abs(vY) * 6.0);
+        col += vec3(0.9, 0.5, 0.2) * horizon * 0.2;
+
+        // ☀️ Fake sun glow
+        vec3 sunDir = normalize(vec3(0.3, 0.7, 0.2));
+        float sun = max(dot(normalize(TexCoords), sunDir), 0.0);
+        sun = pow(sun, 64.0); // sharp glow
+        col += vec3(1.0, 0.9, 0.6) * sun * 1.5;
+
+        // 🌤 Sky softness
+        col = pow(col, vec3(0.85)); // gamma tweak
+
         FragColor = vec4(col, 1.0);
     }
 }

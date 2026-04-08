@@ -46,9 +46,7 @@ pacman -S mingw-w64-x86_64-cmake \
 ### Build
 
 ```bash
-cd /d/zombies/zombie3d
-mkdir -p build && cd build
-cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+cd d:\zombies\zombie3d\build
 mingw32-make -j4
 ```
 

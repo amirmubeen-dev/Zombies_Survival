@@ -24,40 +24,53 @@ struct Zombie : Entity {
     // Death sequence
     bool  isDying      = false;
     float deathTimer   = 0.0f; // 0.8s fall + 2s fade
+    float jitter = ((rand() % 100) / 100.0f - 0.5f) * 0.3f;
 
     Zombie() {}
 
     void updateAnimation(float dt, bool moving) {
-        if (flashing) {
-            flashTimer -= dt;
-            if (flashTimer <= 0) flashing = false;
-        }
-
-        if (isDying) {
-            deathTimer += dt;
-            return;
-        }
-
-        if (moving) {
-            walkAnim += speed * dt * 2.5f;
-        } else {
-            walkAnim = 0.0f;
-        }
-        
-        if (attackCooldown > 0) attackCooldown -= dt;
+    if (flashing) {
+        flashTimer -= dt;
+        if (flashTimer <= 0) flashing = false;
     }
+
+    if (isDying) {
+        deathTimer += dt;
+        return;
+    }
+
+    if (moving) {
+        // 🔥 natural walk (not robotic)
+        walkAnim += speed * dt * 2.0f;
+
+        // 🔥 slight body sway (human-like imbalance)
+        float sway = sinf(walkAnim * 0.5f) * 0.2f;
+
+        // 🔥 angle variation (not perfectly straight)
+        angle += sway * dt;
+    } else {
+        walkAnim = 0.0f;
+    }
+
+    if (attackCooldown > 0) attackCooldown -= dt;
+}
 
     void takeDamage(float dmg) {
-        if (isDying) return;
-        health -= dmg;
-        flashing = true;
-        flashTimer = 0.15f;
-        if (health <= 0) {
-            health = 0;
-            alive = false;
-            // death animation and score handling is done in Game::update loop
-        }
+    if (isDying) return;
+
+    health -= dmg;
+    flashing = true;
+    flashTimer = 0.15f;
+
+    if (health <= 0) {
+        health = 0;
+        alive = false;
+
+        // 🔥 start death animation
+        isDying = true;
+        deathTimer = 0.0f;
     }
+}
 
     float getScale() const {
         // Ensure zombie model height is consistent with player height for realistic play

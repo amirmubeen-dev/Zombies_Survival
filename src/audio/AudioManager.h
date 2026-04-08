@@ -109,18 +109,25 @@ public:
 private:
     void generateProceduralSounds() {
 #ifdef HAS_OPENAL
-        // 1. Pistol (Sharp crack, short decay)
-        buffers["pistol"] = createNoiseBurst(0.15f, 0.01f);
-        // 2. Shotgun (Deep boom, longer decay)
-        buffers["shotgun"] = createNoiseBurst(0.35f, 0.05f, 0.6f);
-        // 3. Rifle (Loud sharp crack, tiny echo)
-        buffers["rifle"] = createNoiseBurst(0.2f, 0.01f, 1.2f);
-        // 4. Zombie Growl (Low pitch saw sweep)
-        buffers["zombie_growl"] = createSawSweep(0.8f, 120.0f, 60.0f);
-        // 5. Footstep (Low freq thump)
-        buffers["footstep"] = createNoiseBurst(0.08f, 0.01f, 0.3f);
-        // 6. Ambient Jungle (Looping noise filtered)
-        buffers["ambience"] = createAmbientLoop(5.0f);
+        // 1. Pistol (thoda sharper aur realistic crack)
+buffers["pistol"] = createNoiseBurst(0.12f, 0.005f, 1.3f);
+
+// 2. Shotgun (heavy boom feel)
+buffers["shotgun"] = createNoiseBurst(0.45f, 0.02f, 0.5f);
+
+// 3. Rifle (sharp + loud crack)
+buffers["rifle"] = createNoiseBurst(0.18f, 0.003f, 1.5f);
+
+// 4. Zombie Growl (zyada creepy + deep variation)
+buffers["zombie_growl"] = createSawSweep(1.0f, 90.0f, 40.0f);
+
+// 5. Footstep (soft + realistic thump)
+buffers["footstep"] = createNoiseBurst(0.06f, 0.008f, 0.25f);
+
+// 6. Ambient Jungle (zyada smooth aur natural)
+buffers["ambience"] = createAmbientLoop(8.0f);
+
+// 7. Death (existing functions se hi banaya 🔥)
 #endif
     }
 

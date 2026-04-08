@@ -1,7 +1,4 @@
 #pragma once
-// Shared minimal types used across multiple systems
-// Include this instead of individual headers to avoid duplicate definitions
-
 #include <glm/glm.hpp>
 
 struct Particle3D {
